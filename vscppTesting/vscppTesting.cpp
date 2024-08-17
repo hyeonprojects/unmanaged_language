@@ -3,9 +3,22 @@
 
 #include <iostream>
 
-int main()
+union ShareData
 {
-    std::cout << "Hello World!\n";
+	unsigned char a;
+	unsigned short b;
+	unsigned int c;
+};
+
+int main(void) {
+	ShareData var;
+	var.c = 0x12345678;
+
+	std::cout << std::hex;
+	std::cout << var.a << std::endl;
+	std::cout << var.b << std::endl;
+	std::cout << var.c;
+	return 0;
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
